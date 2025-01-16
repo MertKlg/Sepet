@@ -7,8 +7,7 @@ Sepet-android working with clean architecture and using this implementations.
 Retrofit, Roomdatabase, Hilt, Jetpack Compose and ViewModel
 You can see sepet-android application in this Gif
 
-![sepet-android](https://github.com/user-attachments/assets/6d815cc9-a808-4224-98b2-3aa1bcdef6b4)
-
+![](https://github.com/user-attachments/assets/6d815cc9-a808-4224-98b2-3aa1bcdef6b4)
 
 "Sepet-Api" :
 Sepet-api working basic mvc architecture and using this implementaions.
