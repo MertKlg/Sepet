@@ -1,0 +1,17 @@
+export enum StatusCode{
+    BAD_REQUEST = 400,
+    NOT_FOUND = 404,
+    CREATED = 201, 
+    SUCCESS = 200, 
+    UNAUTHORIZE = 403,
+    SOMETHING_WENT_WRONG = 500
+}
+
+export enum StatusMessage{
+    BAD_REQUEST = "BAD REQUEST",
+    NOT_FOUND = "NOT FOUND",
+    CREATED = "CREATED", 
+    SUCCESS = "SUCCESS", 
+    UNAUTHORIZE = "UNAUTHORIZED",
+    SOMETHING_WENT_WRONG = "SOMETHING WENT WRONG"
+}

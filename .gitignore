@@ -1,0 +1,45 @@
+# === Api project ===
+sepet-api/storage
+sepet-api/node_modules
+
+# === Android Project ===
+sepet-android/*.iml
+sepet-android/.gradle
+sepet-android/local.properties
+sepet-android/.idea/caches
+sepet-android/.idea/libraries
+sepet-android/.idea/modules.xml
+sepet-android/.idea/workspace.xml
+sepet-android/.idea/navEditor.xml
+sepet-android/.idea/assetWizardSettings.xml
+sepet-android/.DS_Store
+sepet-android/build
+sepet-android/captures
+sepet-android/.externalNativeBuild
+sepet-android/.cxx
+sepet-android/local.properties
+sepet-android/.idea/
+sepet-android/.kotlin/
+
+
+# === Web Project ===
+sepet-web/.output
+sepet-web/.data
+sepet-web/.nuxt
+sepet-web/.nitro
+sepet-web/.cache
+sepet-web/dist
+
+sepet-web/node_modules
+
+sepet-web/logs
+sepet-web/*.log
+
+sepet-web/.DS_Store
+sepet-web/.fleet
+sepet-web/.idea
+
+sepet-web/.env
+sepet-web/.env.*
+sepet-web/!.env.example
+sepet-web/nuxt-ui-app

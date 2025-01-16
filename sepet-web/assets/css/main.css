@@ -1,0 +1,11 @@
+:root{
+    --primary-color :#28A745;
+    --secondary-color : #ffff;
+    --tertitary-color : #FFA500;
+}
+
+
+*{
+    font-family: "Montserrat", serif;
+    box-sizing: border-box;
+}
