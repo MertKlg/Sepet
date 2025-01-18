@@ -21,3 +21,6 @@ Sepet-Web working nuxt and using this implementaions.
 Pinia,Vue,VueRouter,yup,Vee-validate,Bootstrap and Google Fonts.
 Sepet-web keeps storage api link in the "Common" folder.
 I don't know what more to say about for "Sepet-web"
+
+You will see how to work sepet-web in this gif
+![sepet-web gif](https://github.com/user-attachments/assets/fac6235b-378e-4a42-aba7-23b26953912f)
