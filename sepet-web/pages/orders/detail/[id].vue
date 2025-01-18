@@ -13,7 +13,7 @@
                         <div class="d-flex align-items-center py-2 px-5"
                             :class="(index == 0) ? 'rounded-top border' : (index == (orderDetail.products.length - 1)) ? 'border rounded-bottom' : 'border-end border-bottom border-start'"
                             v-for="(product, index) in orderDetail.products" :key="product.product._id">
-                            <img :src="'http://localhost:8080/storage/' + product.product.image" decoding="async"
+                            <img :src=" API_URL +'storage/' + product.product.image" decoding="async"
                                 style="height: 100px; width:100px; object-fit: contain;" />
 
                             <div class="text-center w-100">
@@ -111,7 +111,7 @@ const getOrder = async (orderId: string | null) => {
 }
 
 const getAddress = async () => {
-    const url = (API_URL + `v1/address/`)
+    const url = (API_URL + `v1/address/all`)
     const { data, error } = await useAsyncData("orderDetail", () => $fetch(url, { credentials: "include", method: "get" }))
 
     if (error.value) {

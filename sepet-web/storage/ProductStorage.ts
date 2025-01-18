@@ -1,3 +1,4 @@
+import { API_URL } from "~/common/Api"
 import type { IFilters } from "~/model/interface/IFilters"
 import type { IProduct } from "~/model/interface/IProduct"
 import type { IResponse } from "~/model/interface/IResponse"
@@ -20,7 +21,7 @@ export const productStorage = defineStore("productStorage", () => {
 
     async function getProducts(query : string = "") {
         try{
-            const {data,error} = await useAsyncData("products", () => $fetch(`http://localhost:8080/v1/product${query}`))
+            const {data,error} = await useAsyncData("products", () => $fetch(`${API_URL}v1/product/all/${query}`))
             
             if(error.value){
                 console.log("i catch some errors")
@@ -33,11 +34,10 @@ export const productStorage = defineStore("productStorage", () => {
 
                 if(response.data){
                     productsState.response.products = []
-                    
 
-                    productsState.response = JSON.parse(JSON.stringify(response.data))
-                    
-                    
+                    if(response.data.length > 0){
+                        productsState.response = JSON.parse(JSON.stringify(response.data[0]))
+                    }
                     //productsState.products.push(...json["products"] as IProduct[])
                     //productsState.filters = json["filters"] as IFilters
                 }

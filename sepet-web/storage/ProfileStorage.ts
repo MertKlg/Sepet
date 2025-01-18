@@ -20,7 +20,7 @@ export const profileStore = defineStore("profileStore", () => {
 
     async function profile() {
         try{
-            const {data, error} = await useAsyncData("profile", () => $fetch((API_URL + "v1/profile"),{ credentials : "include", method : "get" }) )
+            const {data, error} = await useAsyncData("profile", () => $fetch((API_URL + "v1/profile/all"),{ credentials : "include", method : "get" }) )
             
             if(error.value){
                 auth.isAuth = false

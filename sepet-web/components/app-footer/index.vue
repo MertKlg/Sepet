@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="container text-white text-center">
-            Sepet 2024 tüm hakları saklıdır
+            Sepet 2025 all rights reserved
         </div>
     </footer>
 </template>

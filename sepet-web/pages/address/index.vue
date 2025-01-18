@@ -73,7 +73,7 @@ onMounted(async () => await getAddress())
 
 const getAddress = async () => {
     try {
-        const res = await $fetch((API_URL + "v1/address/"), { credentials: "include" })
+        const res = await $fetch((API_URL + "v1/address/all"), { credentials: "include" })
 
         const response = res as IResponse
 

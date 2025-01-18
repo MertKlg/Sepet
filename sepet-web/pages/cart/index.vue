@@ -6,7 +6,7 @@
 
             <div class="container position-relative z-1">
                 <div v-if="!cart">
-                    <h1>You has no cart or cannot login </h1>
+                    <h1>You don't have a cart</h1>
                 </div>
 
                 <div class="row" v-else>
@@ -21,7 +21,7 @@
                             v-else :key="item.product._id">
 
                             <div class="col d-flex justify-content-center">
-                                <img :src="'http://localhost:8080/storage/' + item.product.image" decoding="async"
+                                <img :src=" API_URL +'storage/' + item.product.image" decoding="async"
                                     class="img-fluid" style="width: 100px;" />
                             </div>
                             <div class="col">
@@ -99,7 +99,7 @@ onMounted(async () => {
 })
 
 const getUserCart = async () => {
-    const { data, error } = await useAsyncData("cart", () => $fetch((API_URL + "v1/cart/"), { credentials: "include" }))
+    const { data, error } = await useAsyncData("cart", () => $fetch((API_URL + "v1/cart/all"), { credentials: "include" }))
     if (error.value) {
         status.value.push(error.value.data as IResponse)
         return
@@ -146,7 +146,7 @@ const updateProduct = async (product: ICartOfProduct) => {
 
 
 const getUserAddress = async () => {
-    const { data, error } = await useAsyncData("getAdresses", () => $fetch((API_URL + "v1/address/"), { credentials: "include", method: "get"}))
+    const { data, error } = await useAsyncData("getAdresses", () => $fetch((API_URL + "v1/address/all"), { credentials: "include", method: "get"}))
     if (error.value) {
         status.value.push(error.value.data as IResponse)
         return

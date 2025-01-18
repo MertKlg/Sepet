@@ -3,7 +3,7 @@ import { ref,onMounted, reactive,nextTick } from "vue";
 import { API_URL } from "~/common/Api";
 import type { ICategory } from "~/model/interface/ICategory";
 import type { IProduct } from "~/model/interface/IProduct";
-import type { IResponse } from '~/model/interface/IResponse';
+import { IResponse } from '~/model/interface/IResponse';
 import { productStorage } from "~/storage/ProductStorage";
 
 const productStore = productStorage();
@@ -30,14 +30,17 @@ const filters = reactive({
 
 const getCategories = async () => {
   try {
-    const { data, error } = await useAsyncData("categories", () => $fetch("http://localhost:8080/v1/category"))
+    const { data, error } = await useAsyncData("categories", () => $fetch(`${API_URL}v1/category`))
 
     if (error.value) {
       console.error("i had some error")
       return
     }
 
-    category.categories.push(...data.value as ICategory[])
+    const response = data.value as IResponse
+    if(response.status === 200){
+      category.categories = response.data.map(e => e as ICategory) 
+    }
 
   } catch (e) {
     console.error(e)
@@ -164,7 +167,7 @@ const removeStatus = (product: IProduct) => {
               <div class="card" v-for="item in productStore.productsState.response.products" :key="item._id">
                 <div class="card-img-top text-center">
                   <img class="img-fluid mt-3" style="height: 120px; width: 120px; object-fit: contain;"
-                    :src="'http://localhost:8080/storage/' + item.image" alt="image" decoding="async" />
+                    :src=" API_URL+'storage/' + item.image" alt="image" decoding="async" />
                 </div>
 
                 <div class="card-body">

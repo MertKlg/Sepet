@@ -79,7 +79,7 @@ const findAddress = async (addressId: string | null) => {
             react.status = {message : "No addres found", data : [], status : 1 } as IResponse
             return
         }
-        const res = await $fetch((API_URL + `v1/address/${id}`), { credentials: "include", method: "get" })
+        const res = await $fetch((API_URL + `v1/address/all/${id}`), { credentials: "include", method: "get" })
 
         if (!res) {
             react.status = res as IResponse
